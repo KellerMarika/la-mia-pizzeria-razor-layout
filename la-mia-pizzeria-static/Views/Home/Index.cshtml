@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-danger">Welcome 
+    </h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @{
+    string message = "foreignObject example with Scalable Vector Graphics (SVG)";
+}
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" rx="10" ry="10" width="200" height="200" stroke="black" 
+        fill="none" />
+    <foreignObject x="20" y="20" width="160" height="160">
+        <p>@message</p>
+    </foreignObject>
+    <p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2023)</p>
+</svg>
+
+<p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+
+@Html.Raw("<span>Hello World</span>")
+@{
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+
+    RenderName("Mahatma Gandhi");
+    RenderName("Martin Luther King, Jr.");
+}
+
+
+    @{
+    var inCSharp = true;
+    <p>Now in HTML, was in C# @inCSharp</p>
+}
+<div class="@false">False</div>
+<div class="@null">Null</div>
+<div class="@("")">Empty</div>
+<div class="@("false")">False String</div>
+<div class="@("active")">String</div>
+<input type="checkbox" checked="@true" name="true" />
+<input type="checkbox" checked="@false" name="false" />
+<input type="checkbox" checked="@null" name="null" />
+
+</div>
+
+
